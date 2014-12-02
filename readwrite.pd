@@ -1,0 +1,20 @@
+#N canvas 128 152 717 509 10;
+#X obj 407 169 text;
+#X obj 401 269 qlist;
+#X obj 124 279 textfile;
+#X msg 124 251 write test.pd;
+#X msg 187 127 clear;
+#X msg 171 155 add #N canvas 0 0 100 100 10 \;;
+#X msg 155 183 add #X obj 0 0 all-together \;;
+#X obj 124 99 t b b b b b;
+#X obj 124 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
+#X connect 7 2 6 0;
+#X connect 7 3 5 0;
+#X connect 7 4 4 0;
+#X connect 8 0 7 0;

@@ -1,0 +1,17 @@
+#N canvas 710 374 450 300 10;
+#X msg 24 40 test.pd;
+#X obj 24 62 t b a;
+#X obj 24 84 del 2000;
+#X obj 24 106 symbol;
+#X obj 24 128 makefilename pd-%s;
+#X msg 24 150 \; \$1 menuclose \;;
+#X obj 157 84 symbol;
+#X msg 157 106 \; pd open \$1 ./;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 6 0 3 1;
