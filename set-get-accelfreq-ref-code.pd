@@ -1,0 +1,11 @@
+#N canvas 878 22 450 300 10;
+#X obj 12 155 send toSystem;
+#X obj 62 42 t b f;
+#X msg 72 81 list /setAccelFrequency \$1;
+#X msg 22 109 list /getAccelFrequency;
+#X msg 62 8 30;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;

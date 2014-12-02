@@ -1,0 +1,137 @@
+#N canvas 1 22 1279 706 10;
+#X text 8 6 .anchor.;
+#X text 1773 667 .anchor.;
+#X text 1630 15 designed by D. Yi @ 2014 fall;
+#X obj 34 643 send toGUI;
+#X msg 34 615 list /file.num \$1;
+#X obj 51 533 soundpick;
+#X obj 34 65 receive fromGUI;
+#X obj 34 87 route list;
+#X obj 34 131 route 1 0;
+#X obj 67 267 + 1;
+#X floatatom 34 296 5 0 0 0 - - -, f 5;
+#X obj 34 159 bng 15 250 50 0 empty empty pressed 17 7 0 10 -262144
+-1 -1;
+#X obj 34 109 route /open.next;
+#X obj 34 321 % 10;
+#X floatatom 34 449 5 0 0 2 sound_select - -, f 5;
+#X obj 59 179 bng 15 250 50 0 empty empty released 17 7 0 10 -262144
+-1 -1;
+#X text 47 41 push-button;
+#X text 47 243 a counter cycling between 0 ~ 9;
+#X text 140 109 name of btn. message;
+#X obj 256 378 loadbang;
+#X floatatom 152 509 5 0 0 2 volume - -, f 5;
+#X floatatom 76 479 5 0 0 2 playback_speed - -, f 5;
+#X msg 275 462 1;
+#X text 69 322 <-- limiting selectable sounds to 0 ~ 9;
+#X obj 549 65 receive fromSystem;
+#X obj 549 87 list trim;
+#X text 560 42 action-data;
+#X obj 597 161 unpack f f;
+#X floatatom 597 215 5 0 0 0 X - -, f 5;
+#X floatatom 654 215 5 0 0 1 Y - -, f 5;
+#X msg 295 492 1;
+#X obj 549 109 route /compass /tilts /accel /gyro /motion /shake;
+#X text 660 188 -1 ~ +1;
+#X text 550 188 -1 ~ +1;
+#X obj 597 643 send toGUI;
+#X obj 597 559 pack f f;
+#X text 51 590 display sth. on GUI;
+#X text 568 526 display sth. on GUI;
+#X msg 772 493 list /scope.xy \$1 \$2;
+#X obj 772 521 send toGUI;
+#X obj 772 465 pack f f;
+#X text 743 434 display sth. on GUI;
+#X obj 597 587 resample 200;
+#X obj 772 309 + 1;
+#X obj 772 337 / 2;
+#X obj 817 309 + 1;
+#X obj 817 337 / 2;
+#X text 824 362 0 ~ +1;
+#X obj 654 300 + 2;
+#X text 663 331 1 ~ 3;
+#X obj 597 300 + 1;
+#X msg 597 615 list /print.xy play: \$1 vol: \$2;
+#X text 556 330 0 ~ +2;
+#X text 730 362 0 ~ +1;
+#X text 611 133 /tilts (float) (float) - "cooked" XY tilt values -1
+to 1;
+#X obj 256 400 t b b b;
+#X text 239 356 initial settings;
+#X text 755 241 calculations!!;
+#X obj 34 267 f 0;
+#X msg 256 432 0;
+#X text 148 526 1) # of sound \; 2) playback speed (1: original speed)
+\; 3) volume (1: original volume);
+#X text 153 614 1) list - packaging \; 2) /file.num - address \; 3)
+\$1 - content \, \$1 is special keyword to be changed according to
+coming content;
+#X text 908 493 now you know what!;
+#X text 809 615 <-- mail to the guy called "/print.xy". hey \, listen.
+"play: \$1 vol: \$2" !!, f 40;
+#X text 683 587 <----------------------- slow-down posting speed...
+, f 61;
+#X text 659 559 <--------------------------- pack the parcel..., f
+65;
+#X text 871 361 <-- shift range;
+#X text 1132 77 [receive fromSystem] \; /shake (int) - a shake gesture
+occured (value is always 1) \; /tilts (float) (float) - "cooked" XY
+tilt values -1 to 1 \; /accel (float) (float) (float) - raw accelerometer
+data \, x \, y \, z \, range -1 to 1 \; /gyro (float) (float) (float)
+- gyro data \, in radians per second \, around roll \, pitch \, yaw
+\, range -pi to +pi \; /motion (float) (float) (float) - device attitude
+in space \, at roll \, pitch \, yaw \, range -pi to pi \; /compass
+(float) - compass value \, in degrees \; /page (int) - sent whenever
+user scrolls to new page, f 109;
+#X text 1135 490 check this out !! --> http://music.columbia.edu/~daniglesia/mobmuplat/doc/index.htm
+, f 62;
+#X text 1135 248 XY Slider attributes: none output: pair of floats
+0.0-1.0 for x + y position input: pair of floats 0.0-1.0 to set value
+/ send "set x y" to set values without triggering output, f 50;
+#X text 1158 42 more-comments;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 12 0;
+#X connect 8 0 11 0;
+#X connect 8 1 15 0;
+#X connect 9 0 58 1;
+#X connect 10 0 13 0;
+#X connect 11 0 58 0;
+#X connect 12 0 8 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 14 0 4 0;
+#X connect 19 0 55 0;
+#X connect 20 0 5 2;
+#X connect 21 0 5 1;
+#X connect 22 0 21 0;
+#X connect 24 0 25 0;
+#X connect 25 0 31 0;
+#X connect 27 0 28 0;
+#X connect 27 1 29 0;
+#X connect 28 0 43 0;
+#X connect 28 0 50 0;
+#X connect 29 0 45 0;
+#X connect 29 0 48 0;
+#X connect 30 0 20 0;
+#X connect 31 1 27 0;
+#X connect 35 0 42 0;
+#X connect 38 0 39 0;
+#X connect 40 0 38 0;
+#X connect 42 0 51 0;
+#X connect 43 0 44 0;
+#X connect 44 0 40 0;
+#X connect 45 0 46 0;
+#X connect 46 0 40 1;
+#X connect 48 0 35 1;
+#X connect 48 0 20 0;
+#X connect 50 0 35 0;
+#X connect 50 0 21 0;
+#X connect 51 0 34 0;
+#X connect 55 0 59 0;
+#X connect 55 1 22 0;
+#X connect 55 2 30 0;
+#X connect 58 0 9 0;
+#X connect 58 0 10 0;
+#X connect 59 0 14 0;
