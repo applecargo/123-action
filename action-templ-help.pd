@@ -1,0 +1,15 @@
+#N canvas 0 50 283 352 10;
+#X text 59 62 \$1 : sound #;
+#X text 59 82 \$2 : sound volume;
+#X text 59 102 \$3 : sensor #;
+#X text 59 122 \$4 : sensor range-start;
+#X text 59 141 \$5 : sensor range-end;
+#X text 8 7 .anchor.;
+#X text 204 318 .anchor.;
+#X text 59 202 \$1 : sound #;
+#X text 59 222 \$2 : sound volume;
+#X text 59 242 \$3 : sensor #;
+#X text 59 262 \$4 : sensor range-start;
+#X text 59 281 \$5 : sensor range-end;
+#X obj 25 37 action-templ 3 1 1 0.5 1;
+#X obj 25 177 action-templ 4 1 0 0.5 1;
