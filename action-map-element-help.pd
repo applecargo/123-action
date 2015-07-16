@@ -1,9 +1,0 @@
-#N canvas 0 22 300 293 10;
-#X obj 36 36 action-map-element -1 1 0 0 0 0 0 0;
-#X obj 36 66 action-map-element 2 1 0 0 0 2 1 0;
-#X text 58 105 1 sound# 2 sound master vol. (skip. sensor 1 select)
-(skip. sensor 2 select) (skip. sensor 3 select) 3 sensor 1 center 4
-sensor 2 center 5 sensor 3 center 6 play on/off distance 7 fading end
-distance 8 effect multiflier, f 24;
-#X text 7 7 .anchor.;
-#X text 227 260 .anchor.;
